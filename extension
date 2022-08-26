@@ -1,0 +1,118 @@
+fun EditText.onChange(textChanged: ((String) -> Unit)) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            textChanged.invoke(s.toString())
+        }
+    })
+}
+//////////////////////////////////////////////
+fun Context.showToast(message: String?, length: Int = Toast.LENGTH_SHORT) {
+    message?.let {
+        Toast.makeText(this, it, length).show()
+    }
+}
+/////////////////////////////////////////////
+fun Context.isNetworkAvailable(): Boolean {
+    val manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val capabilities = manager.getNetworkCapabilities(manager.activeNetwork)
+        if (capabilities != null) {
+            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                return true
+            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                return true
+            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+                return true
+            }
+        }
+    } else {
+        try {
+            val activeNetworkInfo = manager.activeNetworkInfo
+            if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
+                return true
+            }
+        } catch (e: Exception) {
+            e.showLog()
+        }
+    }
+    return false
+}
+///////////////////////////////////
+fun View.show() {
+    visibility = View.VISIBLE
+}
+
+fun View.hide() {
+    visibility = View.GONE
+}
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
+}
+////////////////////////////////
+fun Any?.isNull() = this == null
+///////////////////////////////
+private const val TIME_STAMP_FORMAT = "EEEE, MMMM d, yyyy - hh:mm:ss a"
+private const val DATE_FORMAT = "yyyy-MM-dd"
+
+fun Long.getTimeStamp(): String {
+    val date = Date(this)
+    val simpleDateFormat = SimpleDateFormat(TIME_STAMP_FORMAT, Locale.getDefault())
+    simpleDateFormat.timeZone = TimeZone.getDefault()
+    return simpleDateFormat.format(date)
+}
+
+fun Long.getYearMonthDay(): String {
+    val date = Date(this)
+    val simpleDateFormat = SimpleDateFormat(DATE_FORMAT, Locale.getDefault())
+    simpleDateFormat.timeZone = TimeZone.getDefault()
+    return simpleDateFormat.format(date)
+}
+
+@Throws(ParseException::class)
+fun String.getDateUnixTime(): Long {
+    try {
+        val simpleDateFormat = SimpleDateFormat(DATE_FORMAT, Locale.getDefault())
+        simpleDateFormat.timeZone = TimeZone.getDefault()
+        return simpleDateFormat.parse(this)!!.time
+    } catch (e: ParseException) {
+        e.printStackTrace()
+    }
+    throw ParseException("Please Enter a valid date", 0)
+}
+/////////////////////////////////////
+fun Context.drawable(@DrawableRes resId: Int) =
+    ResourcesCompat.getDrawable(resources, resId, null)
+
+fun Context.font(@FontRes resId: Int) =
+    ResourcesCompat.getFont(this, resId)
+
+fun Context.dimen(@DimenRes resId: Int) =
+    resources.getDimension(resId)
+
+fun Context.anim(@AnimRes resId: Int) =
+    AnimationUtils.loadAnimation(this, resId)
+///////////////////////////////////////
+val Float.dp
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this,
+        Resources.getSystem().displayMetrics
+    )
+
+val Float.sp
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_SP,
+        this,
+        Resources.getSystem().displayMetrics
+    )
+
+val Int.dp get() = toFloat().dp
+val Int.sp get() = toFloat().sp
+///////////////////////////////
