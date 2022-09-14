@@ -8,9 +8,11 @@ import com.example.buildexample82022.mvvm.data.model.User
 import com.example.buildexample82022.mvvm.data.repository.MainRepository
 import com.example.buildexample82022.mvvm.utils.NetworkHelper
 import com.example.buildexample82022.mvvm.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val mainRepository: MainRepository,
     private val networkHelper: NetworkHelper

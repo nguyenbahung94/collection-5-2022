@@ -5,7 +5,17 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!--for example remove permission-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--for example near wifi devices-->
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation" />
+    <!-- Needed for Local Only Hotspot -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--run time permission-->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:name=".HiltApplication"
         android:allowBackup="true"
@@ -18,7 +28,7 @@
         android:theme="@style/Theme.BuildExample82022"
         tools:targetApi="31">
         <activity
-            android:name=".mvvm.ui.view.MainActivityMVVM"
+            android:name=".android13.MainScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +36,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".hilt.MainHiltActivity" />
+        <activity android:name=".mvvm.ui.view.MainActivityMVVM" />
+        <activity android:name=".android13.coppypast.MainCoppyPastActivity" />
+        <activity android:name=".android13.removepermission.MainRemovePermissionActivity" />
     </application>
 
 </manifest>

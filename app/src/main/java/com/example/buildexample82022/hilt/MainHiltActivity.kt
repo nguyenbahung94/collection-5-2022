@@ -25,6 +25,7 @@ class MainHiltActivity : AppCompatActivity() {
         cryptocurrencyList.layoutManager = LinearLayoutManager(this)
 
         observeCryptoCurrency()
+
     }
 
     private fun observeCryptoCurrency() {
