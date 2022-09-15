@@ -28,12 +28,68 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:text="example coppy past" />
+
         <Button
             android:id="@+id/btnRemovePermission"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
-            android:text="example coppy past" />
+            android:text="RemovePermission" />
+
+        <Button
+            android:id="@+id/btnNearWifiDevices"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="NearWifiDevices" />
+
+        <Button
+            android:id="@+id/btnNotificationRuntimePermission"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="NotificationRuntimePermission" />
+
+        <Button
+            android:id="@+id/btnPerLanguagePreferences"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PerLanguagePreferences" />
+
+        <Button
+            android:id="@+id/btnPhotoPicker"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PhotoPicker" />
+
+        <Button
+            android:id="@+id/btnPredictiveBackGesture"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PredictiveBackGesture" />
+
+        <Button
+            android:id="@+id/btnProgrammableShader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="ProgrammableShader" />
+        <Button
+            android:id="@+id/btnQuickSetting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="QuickSetting" />
+        <Button
+            android:id="@+id/btnThemeAppIcon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="ThemeAppIcon" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
