@@ -43,6 +43,9 @@
         <activity android:name=".android13.photo_picker.PhotoPickerActivity" />
         <activity android:name=".android13.programmableShaders.ProgrammableShadersActivity" />
         <activity android:name=".android13.quicksetting.QuickSettingActivity" />
+        <activity android:name=".android12.splashscreen.SplashScreenActivity" />
+        <activity android:name=".android12.splashscreen.MainActivityAndroid12" />
+        <activity android:name=".android12.splashscreen.roundedCornerApi.RoundedConnerApiActivity" />
 
         <service
             android:name=".StartAppTileService"

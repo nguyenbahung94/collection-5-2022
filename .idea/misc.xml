@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/cloneProject/newex/app/src/main/res/drawable/animated_face.xml" value="0.2215" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2215" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/drawable/ic_launcher_backgroundv2.xml" value="0.2215" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_android_12.xml" value="0.24479166666666666" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_main.xml" value="0.2898550724637681" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_main_coppy_past.xml" value="0.33" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_main_hilt.xml" value="0.2898550724637681" />
@@ -14,6 +18,9 @@
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_programmable_shaders.xml" value="0.168359375" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_quick_setting.xml" value="0.22447916666666667" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_remove_permission.xml" value="0.18359375" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_rich_content_insertion.xml" value="0.21614583333333334" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_rounded_conner.xml" value="0.21510416666666668" />
+        <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_splash_screen12.xml" value="0.24479166666666666" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/activity_theme_app_icon.xml" value="0.22447916666666667" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/item_layout.xml" value="0.14444444444444443" />
         <entry key="..\:/cloneProject/newex/app/src/main/res/layout/list_item.xml" value="0.2898550724637681" />

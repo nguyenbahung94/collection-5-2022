@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.buildexample82022.R
+import com.example.buildexample82022.android12.splashscreen.MainActivityAndroid12
 import com.example.buildexample82022.android13.coppypast.MainCoppyPastActivity
 import com.example.buildexample82022.android13.nearwifidevices.NearWifiDevicesActivity
 import com.example.buildexample82022.android13.notification_runtime_permisson.NotificationRuntimePermissionActivity
@@ -65,9 +66,8 @@ class MainScreenActivity : AppCompatActivity() {
         btnQuickSetting.setOnClickListener {
             startActivity(Intent(this, QuickSettingActivity::class.java))
         }
-
-        btnThemeAppIcon.setOnClickListener {
-
+        btnAndroid12.setOnClickListener {
+            startActivity(Intent(this, MainActivityAndroid12::class.java))
         }
 
     }

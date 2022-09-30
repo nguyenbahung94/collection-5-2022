@@ -77,18 +77,27 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:text="ProgrammableShader" />
+
         <Button
             android:id="@+id/btnQuickSetting"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:text="QuickSetting" />
+
         <Button
             android:id="@+id/btnThemeAppIcon"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:text="ThemeAppIcon" />
+
+        <Button
+            android:id="@+id/btnAndroid12"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="Activity screen android 12" />
 
     </LinearLayout>
 
