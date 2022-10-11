@@ -16,6 +16,11 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!--run time permission-->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".HiltApplication"
         android:allowBackup="true"
@@ -46,9 +51,10 @@
         <activity android:name=".android12.splashscreen.SplashScreenActivity" />
         <activity android:name=".android12.splashscreen.MainActivityAndroid12" />
         <activity android:name=".android12.splashscreen.roundedCornerApi.RoundedConnerApiActivity" />
+        <activity android:name=".appfetchlocationbyfiled.ui.main.ParentActivity" />
 
         <service
-            android:name=".StartAppTileService"
+            android:name=".android13.quicksetting.StartAppTileService"
             android:exported="true"
             android:icon="@drawable/ic_launcher_foreground"
             android:label="My Amazing App"

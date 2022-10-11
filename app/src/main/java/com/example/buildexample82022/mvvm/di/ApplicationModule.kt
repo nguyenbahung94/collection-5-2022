@@ -22,7 +22,9 @@ class ApplicationModule {
     @Provides
     fun provideBaseUrl() = BuildConfig.BASE_URL
 
-    @Provides
+    // TODO: it had been create in  different place 
+
+   /* @Provides
     @Singleton
     fun provideOkHttpClient() = if (BuildConfig.DEBUG) {
         val loggingInterceptor = HttpLoggingInterceptor()
@@ -32,7 +34,7 @@ class ApplicationModule {
             .build()
     } else OkHttpClient
         .Builder()
-        .build()
+        .build()*/
 
 
     @Provides
