@@ -15,6 +15,7 @@ import com.example.buildexample82022.android13.predictivebackgesture.MainPreDict
 import com.example.buildexample82022.android13.programmableShaders.ProgrammableShadersActivity
 import com.example.buildexample82022.android13.quicksetting.QuickSettingActivity
 import com.example.buildexample82022.android13.removepermission.MainRemovePermissionActivity
+import com.example.buildexample82022.composeCourse.FirstComposeMainActivity
 import com.example.buildexample82022.hilt.MainHiltActivity
 import com.example.buildexample82022.mvvm.ui.view.MainActivityMVVM
 import kotlinx.android.synthetic.main.main_screen_activity.*
@@ -27,6 +28,10 @@ class MainScreenActivity : AppCompatActivity() {
     }
 
     private fun setOnClick() {
+        btnCompose.setOnClickListener {
+            startActivity(Intent(this,FirstComposeMainActivity::class.java))
+        }
+
         btnHilt.setOnClickListener {
             startActivity(Intent(this, MainHiltActivity::class.java))
         }
@@ -69,6 +74,7 @@ class MainScreenActivity : AppCompatActivity() {
         btnAndroid12.setOnClickListener {
             startActivity(Intent(this, MainActivityAndroid12::class.java))
         }
+
 
     }
 }
