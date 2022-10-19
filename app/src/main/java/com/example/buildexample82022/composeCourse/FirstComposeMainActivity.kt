@@ -20,7 +20,7 @@ class FirstComposeMainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+            DefaultPreview()
         }
     }
 }
@@ -47,9 +47,10 @@ fun DefaultPreview() {
                 .padding(5.dp)
                 .border(5.dp, color = Color.Yellow)
         ){
-            Text(text = "Default1", modifier = Modifier.border(5.dp,Color.Gray)
+            Text(text = "Default1", modifier = Modifier
+                .border(5.dp, Color.Gray)
                 .padding(5.dp)
-                .offset(20.dp,20.dp)
+                .offset(20.dp, 20.dp)
                 .border(5.dp, color = Color.Black)
                 .padding(10.dp))
 

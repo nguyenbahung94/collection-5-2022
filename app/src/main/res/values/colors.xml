@@ -10,4 +10,8 @@
     <color name="colorPrimary">#0F9D58</color>
     <color name="colorPrimaryDark">#16E37F</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorFab">#FFC857</color>
+    <color name="title_text_color">#585656</color>
+    <color name="divider_color">#d7d7d7</color>
+    <color name="highlight_color">#a7a7a7</color>
 </resources>

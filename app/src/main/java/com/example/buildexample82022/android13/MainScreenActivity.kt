@@ -15,6 +15,7 @@ import com.example.buildexample82022.android13.predictivebackgesture.MainPreDict
 import com.example.buildexample82022.android13.programmableShaders.ProgrammableShadersActivity
 import com.example.buildexample82022.android13.quicksetting.QuickSettingActivity
 import com.example.buildexample82022.android13.removepermission.MainRemovePermissionActivity
+import com.example.buildexample82022.appfetchlocationbyfiled.ui.main.ParentActivity
 import com.example.buildexample82022.composeCourse.FirstComposeMainActivity
 import com.example.buildexample82022.hilt.MainHiltActivity
 import com.example.buildexample82022.mvvm.ui.view.MainActivityMVVM
@@ -75,6 +76,9 @@ class MainScreenActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivityAndroid12::class.java))
         }
 
+        btnFetchLocation.setOnClickListener {
+            startActivity(Intent(this, ParentActivity::class.java))
+        }
 
     }
 }
