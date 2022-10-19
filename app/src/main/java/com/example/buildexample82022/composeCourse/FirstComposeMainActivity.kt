@@ -9,7 +9,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,7 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.buildexample82022.composeCourse.ui.theme.BuildExample82022Theme
-import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class FirstComposeMainActivity : ComponentActivity() {
@@ -30,7 +32,7 @@ class FirstComposeMainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-
+            DefaultPreview()
         }
     }
 }
@@ -46,49 +48,115 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     BuildExample82022Theme {
 
-        //textfield button show sanckbar
-        val scaffoldState = rememberScaffoldState()
-        var textFieldState by remember {
-            mutableStateOf(" ")
+        //effects
+        var text by remember{
+            mutableStateOf("")
         }
-        val scope = rememberCoroutineScope()
 
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            scaffoldState = scaffoldState
-        ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 30.dp)
-            ) {
-                TextField(value = textFieldState, label = {
-                    Text("Enter your name")
-                }, onValueChange = {
-                    textFieldState = it
-                },
-                    singleLine = true,
-                    modifier = Modifier.fillMaxWidth()
-                )
 
-                Spacer(modifier = Modifier.height(15.dp))
 
-                Box(
-                    modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.CenterEnd
-                ) {
-                    Button(onClick = {
-                        scope.launch {
-                            scaffoldState.snackbarHostState.showSnackbar("Hello $textFieldState")
-                        }
-                    }) {
-                        Text(text = "Pls greet me")
-                    }
-                }
+
+
+        //constraintlayout
+/*
+
+        val contraints = ConstraintSet {
+            val greenBox = createRefFor("greenBox")
+            val redBox = createRefFor("redBox")
+            val guildLine = createGuidelineFromTop(0.5f)
+
+            constrain(greenBox) {
+                top.linkTo(guildLine)
+                start.linkTo(parent.start)
+                width = Dimension.value(100.dp)
+                height = Dimension.value(100.dp)
             }
+            constrain(redBox) {
+                top.linkTo(parent.top)
+                start.linkTo(greenBox.end)
+                end.linkTo(parent.end)
+                width = Dimension.value(100.dp)
+                height = Dimension.value(100.dp)
+            }
+            createHorizontalChain(greenBox, redBox, chainStyle = ChainStyle.Packed)
         }
+        ConstraintLayout(contraints, modifier = Modifier.fillMaxSize()) {
+            Box(
+                modifier = Modifier
+                    .background(Color.Green)
+                    .layoutId("greenBox")
+            )
+            Box(
+                modifier = Modifier
+                    .background(Color.Red)
+                    .layoutId("redBox")
+            )
+        }
+*/
+
+
+        //list
+/*
+        LazyColumn{
+            itemsIndexed(
+                listOf("this","is","jetpack","Compose")
+            ){index, item ->
+                Text(
+                    text = "$item($index)", fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 24.dp)
+                )
+            }
+
+        }*/
+
+
+        /*  //textfield button show sanckbar
+          val scaffoldState = rememberScaffoldState()
+          var textFieldState by remember {
+              mutableStateOf(" ")
+          }
+          val scope = rememberCoroutineScope()
+
+          Scaffold(
+              modifier = Modifier.fillMaxSize(),
+              scaffoldState = scaffoldState
+          ) {
+              Column(
+                  horizontalAlignment = Alignment.CenterHorizontally,
+                  verticalArrangement = Arrangement.Center,
+                  modifier = Modifier
+                      .fillMaxSize()
+                      .padding(horizontal = 30.dp)
+              ) {
+                  TextField(value = textFieldState, label = {
+                      Text("Enter your name")
+                  }, onValueChange = {
+                      textFieldState = it
+                  },
+                      singleLine = true,
+                      modifier = Modifier.fillMaxWidth()
+                  )
+
+                  Spacer(modifier = Modifier.height(15.dp))
+
+                  Box(
+                      modifier = Modifier.fillMaxWidth(),
+                      contentAlignment = Alignment.CenterEnd
+                  ) {
+                      Button(onClick = {
+                          scope.launch {
+                              scaffoldState.snackbarHostState.showSnackbar("Hello $textFieldState")
+                          }
+                      }) {
+                          Text(text = "Pls greet me")
+                      }
+                  }
+              }
+          }*/
 
         //state
         /*   Column(Modifier.fillMaxSize()) {
