@@ -3,6 +3,7 @@ package com.example.buildexample82022.android13
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.buildexample82022.R
 import com.example.buildexample82022.android12.splashscreen.MainActivityAndroid12
@@ -81,4 +82,61 @@ class MainScreenActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        //smart cast
+        val str1: String? = "GeeksforGeeks"
+        var str2: String? = null   // prints String is null
+        if (str1 is String) {
+
+            // No Explicit type Casting needed.
+            println("length of String ${str1.length}")
+        } else {
+            println("String is null")
+        }
+
+        var name = "Praveen"
+        var age = 24
+        var salary = 5000.55
+        val employeeDetails: List<Any> = listOf(name, age, salary)
+
+        for (attribute in employeeDetails) {
+            if (attribute is String) {
+                println("Name: $attribute")
+            } else if (attribute is Int) {
+                println("Age: $attribute")
+            } else if (attribute is Double) {
+                println("Salary: $attribute")
+            } else {
+                println("Not an attribute")
+            }
+        }
+
+        val person = Person("javax", "20")
+        if (person.age is Int) {
+            Log.e("person ", "Age is type Int")
+        } else {
+            Log.e("person ", "Age is not type Int")
+        }
+
+        funCheckSmartCast()
+    }
+
+    private fun funCheckSmartCast() {
+        var str1: Any = "Safe casting"
+        val str2: String? = str1 as? String     // it works
+        str1 = 11
+        // type casting not possible so returns null to str3
+        val str3: String? = str1 as? String
+        val str4: Int? = str1 as? Int          // it works
+        println(str2)
+        println(str3)
+        println(str4)
+    }
 }
+
+data class Person(
+    val name: String,
+    val age: Any
+)
