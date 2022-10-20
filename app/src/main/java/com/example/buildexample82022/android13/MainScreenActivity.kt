@@ -121,6 +121,12 @@ class MainScreenActivity : AppCompatActivity() {
         }
 
         funCheckSmartCast()
+        var b : Any = 1
+        if (b !is String)
+            println ("$b is not string")
+        else
+            println ("$b is String")
+
     }
 
     private fun funCheckSmartCast() {
