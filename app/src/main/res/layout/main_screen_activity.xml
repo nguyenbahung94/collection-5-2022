@@ -10,9 +10,16 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btnCompose"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Compose Course" />
+
+        <Button
             android:id="@+id/btnHilt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="5dp"
             android:text="example hilt" />
 
         <Button

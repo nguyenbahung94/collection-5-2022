@@ -5,6 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
+/*
+* to implement
+*  rcvView.addOnScrollListener(object : EndlessScrollListener(llm) {
+            override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView) {
+                if (!isLoading && data.size == pageSize) {
+                    getDataByCode(businessTypeCode, pageIndex, pageSize)
+                }
+            }
+        })
+* */
+
 abstract class EndlessScrollListener : RecyclerView.OnScrollListener {
 
     private var mLayoutManager: RecyclerView.LayoutManager? = null

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.buildexample82022">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--for example remove permission-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- for example remove permission -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--for example near wifi devices-->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- for example near wifi devices -->
     <uses-permission
         android:name="android.permission.NEARBY_WIFI_DEVICES"
-        android:usesPermissionFlags="neverForLocation" />
-    <!-- Needed for Local Only Hotspot -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <!--run time permission-->
+        android:usesPermissionFlags="neverForLocation" /> <!-- Needed for Local Only Hotspot -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- run time permission -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -51,6 +46,10 @@
         <activity android:name=".android12.splashscreen.SplashScreenActivity" />
         <activity android:name=".android12.splashscreen.MainActivityAndroid12" />
         <activity android:name=".android12.splashscreen.roundedCornerApi.RoundedConnerApiActivity" />
+        <activity android:name="com.example.buildexample82022.composeCourse.FirstComposeMainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_first_compose_main"
+            android:theme="@style/Theme.BuildExample82022"/>
         <activity android:name=".appfetchlocationbyfiled.ui.main.ParentActivity" />
 
         <service
