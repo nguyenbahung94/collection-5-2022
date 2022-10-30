@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">BuildExample82022</string>
+    <string name="title_activity_first_compose_main">FirstComposeMainActivity</string>
+    <string name="message_something_went_wrong_str">Something went wrong!</string>
+    <string name="message_no_network_connected_str">No network connected!</string>
+    <string name="loading_str">"Loading…"</string>
+    <string name="category">Category</string>
+    <string name="venue_categories">Filter venues by category</string>
+    <string name="if_data_not_available_str">Data not available</string>
+    <string name="venue_distance_str">%dm away from you</string>
+    <string name="not_able_fetch_str">Not able to fetch location</string>
+    <string name="location_fetch_cancelled">Location fetch cancelled</string>
+    <string name="gps_disabled_error_desc">To get your exact location we need\nGPS service, please turn it on !</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="filter">Filter</string>
+    <string name="fetching_location">Fetching Location…</string>
+    <string name="rationale_permission_title">We need permission to your location.</string>
+    <string name="rationale_permission_desc">This app relies on location access to fetch nearby places.Please provide location access.</string>
+    <string name="gps_turned_off_title">GPS is disabled.</string>\
+    <string name="current_location_error_message">An error occurred while getting your current location.\nPlease try again!</string>
+    <string name="retry">Retry</string>
+    <string name="clear_filter">Clear filters</string>
+    <string name="provide_permission">Provide Permission</string>
+    <string name="tv_da_co_loi">Đã xảy ra lỗi</string>
+
+
+    <string name="today">Hôm nay</string>
+    <string name="short_mon">T2</string>
+    <string name="short_tue">T3</string>
+    <string name="short_wed">T4</string>
+    <string name="short_thu">T5</string>
+    <string name="short_fri">T6</string>
+    <string name="short_sat">T7</string>
+    <string name="short_sun">CN</string>
+
+    <string name="monday">Thứ hai</string>
+    <string name="tuesday">Thứ ba</string>
+    <string name="wednesday">Thứ tư</string>
+    <string name="thursday">Thứ năm</string>
+    <string name="friday">Thứ sáu</string>
+    <string name="saturday">Thứ bảy</string>
+    <string name="sunday">Chủ nhật</string>
+
+    <string name="jan">Tháng 1</string>
+    <string name="feb">Tháng 2</string>
+    <string name="mar">Tháng 3</string>
+    <string name="apr">Tháng 4</string>
+    <string name="may">Tháng 5</string>
+    <string name="jun">Tháng 6</string>
+    <string name="jul">Tháng 7</string>
+    <string name="aug">Tháng 8</string>
+    <string name="sep">Tháng 9</string>
+    <string name="oct">Tháng 10</string>
+    <string name="nov">Tháng 11</string>
+    <string name="dec">Tháng 12</string>
+</resources>

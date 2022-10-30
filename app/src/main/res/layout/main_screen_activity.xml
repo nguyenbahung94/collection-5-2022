@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnCompose"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Compose Course" />
+
+        <Button
+            android:id="@+id/btnHilt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="example hilt" />
+
+        <Button
+            android:id="@+id/btnmvvm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="example mvvm" />
+
+        <Button
+            android:id="@+id/btnCoppyPast"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="example coppy past" />
+
+        <Button
+            android:id="@+id/btnRemovePermission"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="RemovePermission" />
+
+        <Button
+            android:id="@+id/btnNearWifiDevices"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="NearWifiDevices" />
+
+        <Button
+            android:id="@+id/btnNotificationRuntimePermission"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="NotificationRuntimePermission" />
+
+        <Button
+            android:id="@+id/btnPerLanguagePreferences"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PerLanguagePreferences" />
+
+        <Button
+            android:id="@+id/btnPhotoPicker"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PhotoPicker" />
+
+        <Button
+            android:id="@+id/btnPredictiveBackGesture"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="PredictiveBackGesture" />
+
+        <Button
+            android:id="@+id/btnProgrammableShader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="ProgrammableShader" />
+
+        <Button
+            android:id="@+id/btnQuickSetting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="QuickSetting" />
+
+        <Button
+            android:id="@+id/btnThemeAppIcon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="ThemeAppIcon" />
+
+        <Button
+            android:id="@+id/btnAndroid12"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="Activity screen android 12" />
+        <Button
+            android:id="@+id/btnFetchLocation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="Exam fetch Location" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
