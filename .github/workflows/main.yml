@@ -1,0 +1,23 @@
+name: First create Android CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.5.0
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.6.0
+        with:
+          java-version: 1.8
+      - name: Build with gradle
+        run: ./gradlew build
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+         name: app
+         path: app/build/outputs/apk/debug/**.apk 
