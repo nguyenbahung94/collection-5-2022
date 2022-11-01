@@ -79,3 +79,45 @@ class temp : Fragment() {
     }
 
 }
+
+class temp4:Fragment() {
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = ActivityMainBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+        event()
+    }
+
+    private fun init() {
+
+    }
+
+    private fun event() {
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    fun newInstance(): temp4 {
+        return temp4().apply {
+            arguments = Bundle().apply {
+            }
+        }
+    }
+
+}
