@@ -1,0 +1,19 @@
+name: mobsfscan
+
+on:
+  push:
+    branches: [ android_check_style_code ]
+  pull_request:
+    branches: [ android_check_style_code ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: mobsfscan
+      uses: MobSF/mobsfscan@main
+      with:
+        args: '.'
