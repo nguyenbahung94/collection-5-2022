@@ -121,22 +121,11 @@ class fmaxSize : Fragment() {
     }
 
     private fun init() {
-
+        _binding=null
     }
 
     private fun event() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
-    fun newInstance(): fmaxSize {
-        return fmaxSize().apply {
-            arguments = Bundle().apply {
-            }
-        }
-    }
 }

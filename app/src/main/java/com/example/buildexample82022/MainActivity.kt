@@ -68,14 +68,8 @@ class temp : Fragment() {
         _binding = null
     }
 
-    companion object {
-        fun newInstance(): temp {
-            return temp().apply {
-                arguments = Bundle().apply {
-                }
-            }
-        }
 
     }
 
 }
+
