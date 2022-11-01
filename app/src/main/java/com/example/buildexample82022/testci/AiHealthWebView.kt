@@ -133,10 +133,3 @@ class fmaxSize : Fragment() {
         _binding = null
     }
 
-    fun newInstance(): fmaxSize {
-        return fmaxSize().apply {
-            arguments = Bundle().apply {
-            }
-        }
-    }
-}
