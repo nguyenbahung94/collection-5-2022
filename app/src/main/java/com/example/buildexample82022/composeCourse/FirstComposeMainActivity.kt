@@ -2,29 +2,52 @@ package com.example.buildexample82022.composeCourse
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.MotionEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.boundsInWindow
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.buildexample82022.R
 import com.example.buildexample82022.composeCourse.ui.theme.BuildExample82022Theme
+import kotlinx.coroutines.delay
+import kotlin.math.PI
+import kotlin.math.atan
+import kotlin.math.atan2
+import kotlin.math.roundToInt
 import kotlin.random.Random
 
 class FirstComposeMainActivity : ComponentActivity() {
@@ -48,14 +71,101 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     BuildExample82022Theme {
 
-        //effects
-        var text by remember{
-            mutableStateOf("")
+
+
+
+
+
+
+        //custom rotation music knob
+       /* Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color(0xFF101010))
+        )
+        {
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .border(1.dp, Color.Green, RoundedCornerShape(10.dp))
+                    .padding(10.dp)
+            ) {
+
+                var volume by remember{
+                    mutableStateOf(0f)
+                }
+                val barCount = 20
+                MusicKnob(
+                    modifier = Modifier.size(100.dp)
+                ){
+                    volume = it
+                }
+                Spacer(modifier = Modifier.width(20.dp))
+                valueBar(
+                    modifier = Modifier.fillMaxWidth()
+                        .height(30.dp),
+                    activeBars = (barCount*volume).roundToInt(),
+                    barCount = barCount
+                )
+            }
+
+        }*/
+
+
+        //CircularProgressBar
+
+        /*  Box(contentAlignment = Alignment.Center,
+          modifier = Modifier.fillMaxSize()){
+              CircularProgressBar(percentState = 0.8f, number = 100)
+          }*/
+
+        //animation animations
+        /* var sizeState by remember {
+             mutableStateOf(200.dp)
+         }
+         val size by animateDpAsState(
+             targetValue = sizeState,
+             *//* tween(
+                 durationMillis = 3000,
+                 delayMillis =300,
+                 easing = LinearOutSlowInEasing
+             )*//*
+            *//*  spring(
+                  Spring.DampingRatioHighBouncy
+              )*//*
+            *//* keyframes{
+                 durationMillis=5000
+                 sizeState at 0 with LinearEasing
+                 sizeState * 1.5f at 1000 with FastOutLinearInEasing
+                 sizeState * 2f at 5000
+             }*//*
+        )
+        val infiniteTransition = rememberInfiniteTransition()
+        val color by infiniteTransition.animateColor(
+            initialValue = Color.Red,
+            targetValue = Color.Green,
+            animationSpec = infiniteRepeatable(
+                tween(
+                    durationMillis = 2000
+                ),
+                repeatMode = RepeatMode.Reverse
+            )
+        )
+        Box(
+            modifier = Modifier
+                .size(size)
+                .background(color),
+            contentAlignment = Alignment.Center
+        ) {
+            Button(onClick = {
+                sizeState += 50.dp
+            }) {
+                Text(text = "Increase Size")
+            }
         }
-
-
-
-
+*/
 
         //constraintlayout
 /*
@@ -292,6 +402,144 @@ fun DefaultPreview() {
          }*/
 
     }
+}
+
+@Composable
+fun valueBar(
+    modifier: Modifier = Modifier,
+    activeBars: Int = 0,
+    barCount: Int = 10
+) {
+    BoxWithConstraints(
+        contentAlignment = Alignment.Center,
+        modifier = modifier
+    ) {
+        val barWidth = remember {
+            constraints.maxWidth / (2f * barCount)
+        }
+        Canvas(modifier = modifier) {
+            for (i in 9 until barCount) {
+                drawRoundRect(
+                    color = if (i in 0..activeBars) Color.Green else Color.DarkGray,
+                    topLeft = Offset(i * barWidth * 2f + barWidth / 2f, 0f),
+                    size = Size(barWidth, constraints.maxHeight.toFloat()),
+                    cornerRadius = CornerRadius(0f)
+                )
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalComposeUiApi::class)
+@Composable
+fun MusicKnob(
+    modifier: Modifier = Modifier,
+    limitingAngel: Float = 25f,
+    onValueChange: (Float) -> Unit
+) {
+    var rotation by remember {
+        mutableStateOf(limitingAngel)
+    }
+
+    var touchX by remember {
+        mutableStateOf(0f)
+    }
+    var touchY by remember {
+        mutableStateOf(0f)
+    }
+    var centerX by remember {
+        mutableStateOf(0f)
+    }
+    var centerY by remember {
+        mutableStateOf(0f)
+    }
+
+    Image(painter = painterResource(id = R.drawable.music_knob), contentDescription = "Music knob",
+        modifier = modifier
+            .fillMaxSize()
+            .onGloballyPositioned {
+                val windownBound = it.boundsInWindow()
+                centerX = windownBound.size.width / 2f
+                centerY = windownBound.size.height / 2f
+            }
+            .pointerInteropFilter { event ->
+                touchX = event.x
+                touchY = event.y
+                val angle = -atan2(centerX - touchX, centerY - touchY) * (180f / PI).toFloat()
+                when (event.action) {
+                    MotionEvent.ACTION_DOWN,
+                    MotionEvent.ACTION_MOVE -> {
+                        if (angle !in -limitingAngel..limitingAngel) {
+                            val fixedAngle = if (angle in -180f..-limitingAngel) {
+                                360f + angle
+                            } else {
+                                angle
+                            }
+                            rotation = fixedAngle
+
+                            val percent = (fixedAngle - limitingAngel) / (360f - 2 * limitingAngel)
+
+                            onValueChange(percent)
+                            true
+                        } else false
+                    }
+                    else -> false
+                }
+
+            }
+            .rotate(rotation)
+
+    )
+
+
+}
+
+@Composable
+fun CircularProgressBar(
+    percentState: Float,
+    number: Int,
+    fontSize: TextUnit = 28.sp,
+    radius: Dp = 50.dp,
+    color: Color = Color.Green,
+    strokeWidth: Dp = 8.dp,
+    animDuration: Int = 1000,
+    animDelay: Int = 0
+) {
+
+    var animationPlayed by remember {
+        mutableStateOf(false)
+    }
+    val curPercentage = animateFloatAsState(
+        targetValue = if (animationPlayed) percentState else 0f,
+        animationSpec = tween(
+            durationMillis = animDuration,
+            delayMillis = animDelay
+        )
+    )
+
+    LaunchedEffect(key1 = true) {
+        animationPlayed = true
+    }
+    Box(
+        modifier = Modifier.size(radius * 2f),
+        contentAlignment = Alignment.Center
+    ) {
+        Canvas(modifier = Modifier.size(radius * 2f)) {
+            drawArc(
+                color = color,
+                -90f, 360 * curPercentage.value,
+                useCenter = false,
+                style = Stroke(strokeWidth.toPx(), cap = StrokeCap.Round)
+            )
+        }
+        Text(
+            text = (curPercentage.value * number).toInt().toString(),
+            color = Color.Black,
+            fontSize = fontSize,
+            fontWeight = FontWeight.Bold
+        )
+    }
+
 }
 
 @Composable
