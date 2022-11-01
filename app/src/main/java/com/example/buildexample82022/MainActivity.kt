@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class temp : Fragment() {
+class Test2: Fragment() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -68,6 +68,7 @@ class temp : Fragment() {
         _binding = null
     }
 
+<<<<<<< HEAD
     companion object {
         fun newInstance(): temp {
             return temp().apply {
@@ -75,8 +76,54 @@ class temp : Fragment() {
                 }
             }
         }
+=======
+    fun newInstance(): Test2 {
+        return Test2().apply {
+            arguments = Bundle().apply {
+            }
+        }
+    }
+}
+
+class   Test3 :Fragment() {
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = ActivityMainBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+        event()
+    }
+
+    private fun init() {
+>>>>>>> check_style_code_pull_request
 
     }
 
+    private fun event() {
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    fun newInstance(): Test3 {
+        return Test3().apply {
+            arguments = Bundle().apply {
+            }
+        }
+    }
 }
 
