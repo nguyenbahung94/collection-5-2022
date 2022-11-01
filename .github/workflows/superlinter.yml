@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v3.1.1
         with:
             name: code-style-report
-            path: output/test/code-style-report.html
+            path: code-style-report.html
     
