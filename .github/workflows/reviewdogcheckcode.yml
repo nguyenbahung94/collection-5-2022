@@ -1,5 +1,7 @@
 name: reviewdog
-on: [push,pull_request]
+on:
+  push:
+    branches: [ android_check_style_code ]
 jobs:
   ktlint:
     name: Check Code Quality
