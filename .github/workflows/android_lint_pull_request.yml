@@ -31,5 +31,5 @@ jobs:
       - run: ./gradlew lint
       - uses: yutailang0119/action-android-lint@v3.1.0
         with:
-          report-path: app/*.xml
+          report-path: app/androidlint.xml
         continue-on-error: false
