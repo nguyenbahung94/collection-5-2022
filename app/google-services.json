@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "24555167056",
+    "firebase_url": "https://masterial-11cee.firebaseio.com",
+    "project_id": "masterial-11cee",
+    "storage_bucket": "masterial-11cee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24555167056:android:6f2bf4c00fbaacf843a055",
+        "android_client_info": {
+          "package_name": "com.example.buildexample82022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24555167056-9cibqbinmmhvmi272724fqnv4392cluc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdTt6BjwSSlNDZFS_1gIMCK8XCY-bkYuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24555167056-9cibqbinmmhvmi272724fqnv4392cluc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
