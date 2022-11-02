@@ -1,12 +1,12 @@
-name: AndroidLint
+name: AndroidcheckStyleCode
 
 on:
   push:
-    branches: [ check_style_code_pull_request ]
+    branches: [ android_check_style_code ]
   pull_request:
-    branches: [ check_style_code_pull_request ]
+    branches: [ android_check_style_code ]
     paths:
-      - .github/workflows/android_lint_pull_request.yml
+      - .github/workflows/android_lint.yml
       - '*/src/**'
       - gradle/**
       - '**.gradle'
@@ -31,5 +31,5 @@ jobs:
       - run: ./gradlew lint
       - uses: yutailang0119/action-android-lint@v3.1.0
         with:
-          report-path: ${{ github.workspace }}/app/androidlint.xml
-        continue-on-error: false
+          report-path: app/checkstylecode.xml # Support glob patterns by https://www.npmjs.com/package/@actions/glob
+        continue-on-error: false # If annotations contain error of severity, action-android-lint exit 1.

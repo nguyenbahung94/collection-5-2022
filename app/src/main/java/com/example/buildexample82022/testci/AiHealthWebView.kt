@@ -26,9 +26,9 @@ class AiHealthWebView : AppCompatActivity() {
         }
     }
 
-    private lateinit var binding: AihWebViewBinding
-    private var url = ""
-    private var currentUrl = ""
+     lateinit var binding: AihWebViewBinding
+     var url = ""
+     var currentUrl = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,17 +40,17 @@ class AiHealthWebView : AppCompatActivity() {
 
     private fun setSomeThing() {
 
-        binding.btnGoForward.setOnClickListener {
+        btnGoForward.setOnClickListener {
             if (binding.aihWebView.canGoForward()) {
                 aihWebView.goForward()
             }
         }
-        binding.btnGoPrevious.setOnClickListener {
+        btnGoPrevious.setOnClickListener {
             if (binding.aihWebView.canGoBack()) {
                 binding.aihWebView.goBack()
             }
         }
-        binding.btnReload.setOnClickListener {
+        btnReload.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
             binding.aihWebView.reload()
         }
@@ -98,34 +98,4 @@ class AiHealthWebView : AppCompatActivity() {
             finish()
         }
     }
-}
-
-class fmaxSize : Fragment() {
-    private var _binding: AihWebViewBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = AihWebViewBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        init()
-        event()
-    }
-
-    private fun init() {
-        _binding=null
-    }
-
-    private fun event() {
-
-    }
-
 }
