@@ -2,9 +2,9 @@ name: AndroidLint
 
 on:
   push:
-    branches: [ check_style_code_pull_request ]
+    branches: [  ]
   pull_request:
-    branches: [ check_style_code_pull_request ]
+    branches: [  ]
     paths:
       - .github/workflows/android_lint_pull_request.yml
       - '*/src/**'
