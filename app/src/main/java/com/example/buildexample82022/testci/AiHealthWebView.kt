@@ -121,7 +121,7 @@ class fmaxSize : Fragment() {
     }
 
     private fun init() {
-        _binding=null
+
     }
 
     private fun event() {
