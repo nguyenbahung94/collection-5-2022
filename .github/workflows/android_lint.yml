@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ android_check_style_code ]
     paths:
-      - .github/workflows/android_lint_pull_request.yml
+      - .github/workflows/android_lint.yml
       - '*/src/**'
       - gradle/**
       - '**.gradle'
