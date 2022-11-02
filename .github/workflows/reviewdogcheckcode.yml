@@ -1,7 +1,7 @@
 name: reviewdog
 on:
   push:
-    branches: [ android_check_style_code ]
+    branches: [  ]
 jobs:
   ktlint:
     name: Check Code Quality
